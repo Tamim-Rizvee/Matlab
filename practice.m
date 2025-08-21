@@ -2,8 +2,8 @@ clear all
 clc
 
 %time parameter
-fs = 1000;
-t = linspace(0 , 1, 1000);
+fs = 10000;
+t = linspace(0 , 1, 10000);
 
 %message signal parameter
 fm = 10;
@@ -11,8 +11,8 @@ am = 1;
 message_signal = am * sin(2 * pi * fm.*t);
 
 %carrier signal parameter
-fc = 100;
-ac = 2;
+fc = 1000;
+ac = 1;
 carrier_signal = ac * sin(2 * pi * fc.* t);
 
 %perform amplitude modulation 
@@ -59,7 +59,7 @@ ylabel('Amplitude');
 grid on
 
 %low pass filter parameters
-cutoff_freq = 20;
+cutoff_freq = 200;
 numtaps = 20;
 normalized_cuttoff_freq = cutoff_freq / (fs / 2);
 fir_coeff= fir1(numtaps-1, normalized_cuttoff_freq, "low");

@@ -6,7 +6,6 @@ fs = 10000;
 fm = 100;
 time = linspace(0 , 1000/fs , 1001);
 x = 5*sin(2 * pi * 100 .* time);
-
 plot(time , x);
 hold on;
 
